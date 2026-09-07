@@ -1,17 +1,19 @@
 # KitabuCode (Acode-based)
 
-KitabuCode is an Android programming editor based on Acode, with the KitabuCode name and owner-provided logo. The original project remains on the repository's main branch. This migration uses application ID `com.kitabucode.editor` so it can be tested alongside the previous application.
+Android programming editor based on Acode, with the owner's blue book-and-K logo. Application ID: `com.kitabucode.editor`.
 
-## Offline tools
+## Included offline
 
-Open Terminal once with an internet connection. Setup installs Python 3, pip, Node.js, npm, Git and C/C++ build tools. After successful setup those tools run locally without internet. Additional project dependencies must also be installed before going offline. HTML/CSS/JavaScript preview is available in the editor. Completion and formatting depend on each language's editor integration; installing a compiler does not automatically install its language server.
+HTML/CSS preview and JavaScript/TypeScript editor services are included. The APK build prepares Python 3, pip, Python language-server completion/diagnostics, Node.js, npm, Git, C/C++ tools and OpenJDK 21 for x86-64, ARM64 and ARM32. First terminal use extracts the bundled environment; it does not download packages. Extra third-party project dependencies and optional language servers may still require separate installation.
 
-## Build
+The runtime package list, licence metadata and Alpine source link are included under `/usr/share/kitabucode` inside the terminal environment.
 
-Use the **KitabuCode APK** GitHub Actions workflow on `codex/acode-migration`, then download its `KitabuCode-debug` artifact. This is a development APK, not a signed store release.
+## Build and testing
 
-For a Linux local build, follow CONTRIBUTING.md and run `npm run setup` then `npm run build paid dev apk`. The `paid` argument selects the upstream ad-free variant; this fork does not require payment to install.
+Use **KitabuCode APK** in GitHub Actions on `codex/acode-migration`. Download the `KitabuCode-debug` artifact. This is a development APK, not a store release. The workflow prepares runtime assets before the Cordova build; a bare local build does not run that preparation.
+
+The 16 KB x86-64 Android 17 emulator currently crashes in the upstream PRoot runtime. Compatibility on that image is not verified. Use a standard 4 KB image for validation while this is investigated.
 
 ## Attribution
 
-Based on https://github.com/Acode-Foundation/Acode. The original MIT copyright and licence are retained in license.txt. Native runtime components, plugins and downloaded packages have their own licences; these remain applicable. The KitabuCode logo was supplied and authorised by the project owner.
+Based on https://github.com/Acode-Foundation/Acode. The original MIT copyright and licence are retained in license.txt. Native runtime components, plugins and downloaded packages retain their own licences. KitabuCode branding was supplied and authorised by the project owner.
