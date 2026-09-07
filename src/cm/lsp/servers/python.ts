@@ -21,9 +21,9 @@ export const pythonServers: LspServerManifest[] = [
 		languages: ["python"],
 		command: "pylsp",
 		checkCommand: "which pylsp",
-		installer: installers.pip({
+		installer: installers.apk({
 			executable: "pylsp",
-			packages: ["python-lsp-server[all]"],
+			packages: ["py3-lsp-server", "py3-pyflakes", "py3-pycodestyle", "py3-mccabe"],
 		}),
 		initializationOptions: {
 			pylsp: {
