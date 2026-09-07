@@ -33,7 +33,7 @@ if [ "$INSTALLING" != true ] && [ $# -gt 0 ] && [ "${1#--}" = "$1" ]; then
     exec "$@"
 fi
 
-required_packages="bash command-not-found tzdata wget python3 py3-pip py3-lsp-server py3-pyflakes py3-pycodestyle py3-mccabe nodejs npm git build-base"
+required_packages="bash command-not-found tzdata wget python3 py3-pip py3-lsp-server py3-pyflakes py3-pycodestyle py3-mccabe nodejs npm git build-base openjdk21-jdk"
 missing_packages=""
 
 for pkg in $required_packages; do
@@ -43,15 +43,9 @@ for pkg in $required_packages; do
 done
 
 if [ -n "$missing_packages" ]; then
-    echo -e "\e[34;1m[*] \e[0mInstalling important packages\e[0m"
-    apk update && apk add $missing_packages || {
-        echo "KitabuCode tool installation failed. Connect to the internet and retry terminal setup." >&2
-        exit 1
-    }
-    if [ $? -eq 0 ]; then
-        echo -e "\e[32;1m[+] \e[0mSuccessfully installed\e[0m"
-    fi
-    echo -e "\e[34m[*] \e[0mUse \e[32mapk\e[0m to install new packages\e[0m"
+    echo "KitabuCode runtime is incomplete: $missing_packages" >&2
+    echo "Install the complete KitabuCode APK; setup does not download tools." >&2
+    exit 1
 fi
 
 
