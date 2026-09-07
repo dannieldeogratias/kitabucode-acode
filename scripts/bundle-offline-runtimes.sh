@@ -2,7 +2,7 @@
 # Build-time downloads only. Docker/QEMU prepares native runtime trees for each ABI.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-for spec in x64:amd64 arm64:arm64 arm32:arm/v7; do
+for spec in x64:amd64 arm64:arm64; do
   arch=${spec%%:*}
   platform=${spec#*:}
   image="kitabucode-runtime:$arch"

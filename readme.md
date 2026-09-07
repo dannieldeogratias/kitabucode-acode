@@ -4,7 +4,7 @@ Android programming editor based on Acode, with the owner's blue book-and-K logo
 
 ## Included offline
 
-HTML/CSS preview and JavaScript/TypeScript editor services are included. The APK build prepares Python 3, pip, Python language-server completion/diagnostics, Node.js, npm, Git, C/C++ tools and OpenJDK 21 for x86-64, ARM64 and ARM32. First terminal use extracts the bundled environment; it does not download packages. Extra third-party project dependencies and optional language servers may still require separate installation.
+HTML/CSS preview and JavaScript/TypeScript editor services are included. The APK build prepares Python 3, pip, Python language-server completion/diagnostics, Node.js, npm, Git, C/C++ tools and OpenJDK 21 for x86-64 and ARM64 (64-bit devices). First terminal use extracts the bundled environment; it does not download packages. Extra third-party project dependencies and optional language servers may still require separate installation.
 
 The runtime package list, licence metadata and Alpine source link are included under `/usr/share/kitabucode` inside the terminal environment.
 

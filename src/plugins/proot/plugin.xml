@@ -25,14 +25,5 @@
         <resource-file src="assets/alpine_assets/arm64/alpine.rootfs" target="assets/alpine_assets/arm64/alpine.rootfs" />
 
 
-        <!-- armhf / armeabi-v7a (armeabi / armeabi-v6a not supported)-->
-        <source-file src="libs/arm32/libproot.so" target-dir="libs/armeabi-v7a" />
-        <source-file src="libs/arm32/libproot-xed.so" target-dir="libs/armeabi-v7a" />       
-        <source-file src="libs/arm32/libtalloc.so" target-dir="libs/armeabi-v7a" />
-
-        <source-file src="libs/arm32/libaxs.so" target-dir="libs/armeabi-v7a" />
-        <resource-file src="assets/alpine_assets/arm32/alpine.rootfs" target="assets/alpine_assets/arm32/alpine.rootfs" />
-
-           
     </platform>
 </plugin>

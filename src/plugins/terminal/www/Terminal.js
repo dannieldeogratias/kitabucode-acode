@@ -429,7 +429,7 @@ const Terminal = {
     isSupported() {
         return new Promise((resolve, reject) => {
             system.getArch((arch) => {
-                resolve(["arm64-v8a", "armeabi-v7a", "x86_64"].includes(arch));
+                resolve(["arm64-v8a", "x86_64"].includes(arch));
             }, reject);
         });
     },
